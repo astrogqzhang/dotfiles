@@ -1,0 +1,24 @@
+- default:
+    link:
+      relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.bashrc: bashrc
+    ~/.gitconfig: gitconfig
+    ~/.zshrc: zshrc
+    ~/.jupyter: jupyter
+    ~/.condarc: condarc
+    ~/.emacs.d: emacs.d
+    ~/.spacemacs.d: spacemacs.d
+    ~/.oh-my-zsh: oh-my-zsh
+
+
+- shell:
+    - git submodule update --remote
+    - cd ~/.dotfiles/emacs.d
+    - git checkout develop
+    - cd ../
+    
+

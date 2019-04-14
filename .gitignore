@@ -1,0 +1,3 @@
+# ignore jupyter some files
+jupyter/lab/*
+jupyter/migrated
