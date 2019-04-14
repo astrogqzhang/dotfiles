@@ -17,8 +17,5 @@
 
 - shell:
     - git submodule update --remote
-    - cd ~/.dotfiles/emacs.d
-    - git checkout develop
-    - cd ../
     
 
