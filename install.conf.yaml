@@ -13,6 +13,9 @@
     ~/.emacs.d: emacs.d
     ~/.spacemacs.d: spacemacs.d
     ~/.oh-my-zsh: oh-my-zsh
+    ~/.tmux : tmux
+    ~/.tmux.conf : tmux/.tmux.conf
+    ~/.tmux.conf.local : tmux.conf.local
 
 
 - shell:
