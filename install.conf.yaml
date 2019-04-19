@@ -20,5 +20,6 @@
 
 - shell:
     - git submodule update --remote
+    - tic -x -o ~/.terminfo terminfo-24bit.src
     
 
