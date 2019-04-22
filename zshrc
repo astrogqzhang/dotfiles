@@ -108,7 +108,7 @@ alias e="TERM=xterm-24bit emacsclient -c -nw"
 source ~/.enhancd/init.sh
 
 # PATH
-export PATH="~/.dotfiles/bin/:$PATH"
+export PATH="~/.dotfiles/bin:$PATH"
 
 
 # >>> conda init >>>

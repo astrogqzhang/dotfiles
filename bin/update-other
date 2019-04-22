@@ -2,47 +2,75 @@
 
 echo -e "\e[38;5;226mInstalling Or Updating...\e[0m"
 
+# TODO add more description of installing or updating
+# Define function
+set -e
+
+
+info () {
+    printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+}
+
+success () {
+    printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
 
 # oh-my-zsh
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating oh-my-zsh...\e[0m"
 if [ ! -d ~/.oh-my-zsh ]; then
+    info 'installing oh-my-zsh'
     git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+    success "oh-my-zsh installed"
 else
+    info 'updating oh-my-zsh'
     cd ~/.oh-my-zsh && git pull origin master
+    success 'oh-my-zsh updated'
 fi
 
 # Spacemacs
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating oh-my-zsh...\e[0m"
 if [ ! -d ~/.emacs.d ]; then
+    info 'installing spacemacs'
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+    success 'spacemacs installed'
 else
+    info 'update spacemacs'
     cd ~/.emacs.d && git pull
+    success 'spacemacs updated'
 fi
 
 # Enhancd
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating Enhancd...\e[0m"
 if [ ! -d ~/.enhancd/ ]; then
+    info 'installing enhancd'
     git clone https://github.com/b4b4r07/enhancd ~/.enhancd
+    success 'enhancd installed'
 else
+    info 'update enhancd'
     cd ~/.enhancd/ && git pull origin master
+    success 'enhancd updated'
 fi
 
 # fzf
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating fzf...\e[0m"
 if [ ! -d ~/.fzf/ ]; then
+    info 'installing fzf'
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    success 'fzf installed'
 else
+    info 'update fzf'
     cd ~/.fzf/ && git pull origin master
+    success 'fzf updated'
 fi
 ~/.fzf/install --all
 
 # tmux
-echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating tmux...\e[0m"
 if [ ! -d ~/.tmux ]; then
+    info 'installing oh-my-tmux'
     git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+    success 'oh-my-tmux installed'
 else
+    info 'update oh-my-tmux'
     cd ~/.tmux/ && git pull origin master
+    success 'oh-my-tmux updated'
 fi
 
 
-
+# TODO add SpaceVim
