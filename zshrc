@@ -97,11 +97,20 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # export TERM=xterm-24bit 
-alias pynote="LANG=zn jupyter notebook"
 alias vim="nvim"
+
+# emacs alias
 alias es="TERM=xterm-24bit emacs -daemon"
 alias eg="emacsclient -c"
 alias e="TERM=xterm-24bit emacsclient -c -nw"
+
+# enhancd init
+source ~/.enhancd/init.sh
+
+# PATH
+export PATH="~/.dotfiles/bin/:$PATH"
+
+
 # >>> conda init >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/gqzhang/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"

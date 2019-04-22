@@ -1,0 +1,48 @@
+#!/usr/bin/env zsh
+
+echo -e "\e[38;5;226mInstalling Or Updating...\e[0m"
+
+
+# oh-my-zsh
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating oh-my-zsh...\e[0m"
+if [ ! -d ~/.oh-my-zsh ]; then
+    git clone --depth=1 https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+else
+    cd ~/.oh-my-zsh && git pull origin master
+fi
+
+# Spacemacs
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating oh-my-zsh...\e[0m"
+if [ ! -d ~/.emacs.d ]; then
+    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+else
+    cd ~/.emacs.d && git pull
+fi
+
+# Enhancd
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating Enhancd...\e[0m"
+if [ ! -d ~/.enhancd/ ]; then
+    git clone https://github.com/b4b4r07/enhancd ~/.enhancd
+else
+    cd ~/.enhancd/ && git pull origin master
+fi
+
+# fzf
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating fzf...\e[0m"
+if [ ! -d ~/.fzf/ ]; then
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+else
+    cd ~/.fzf/ && git pull origin master
+fi
+~/.fzf/install --all
+
+# tmux
+echo -e "\e[38;5;164m==>\e[0m \e[38;5;85mInstalling or Updating tmux...\e[0m"
+if [ ! -d ~/.tmux ]; then
+    git clone https://github.com/gpakosz/.tmux.git ~/.tmux
+else
+    cd ~/.tmux/ && git pull origin master
+fi
+
+
+

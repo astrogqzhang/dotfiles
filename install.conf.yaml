@@ -10,15 +10,12 @@
     ~/.zshrc: zshrc
     ~/.jupyter: jupyter
     ~/.condarc: condarc
-    ~/.emacs.d: emacs.d
     ~/.spacemacs.d: spacemacs.d
-    ~/.oh-my-zsh: oh-my-zsh
-    ~/.tmux : tmux
     ~/.tmux.conf : tmux.conf
 
 
 - shell:
     - git submodule update --remote
-    - tic -x -o ~/.terminfo terminfo-24bit.src
+    - update-other
     
 
