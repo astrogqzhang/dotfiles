@@ -16,6 +16,6 @@
 
 - shell:
     - git submodule update --remote
-    - update-other
+    - sh ~/.dotfiles/bin/update-other
     
 
