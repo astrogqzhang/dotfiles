@@ -108,7 +108,7 @@ alias e="TERM=xterm-24bit emacsclient -c -nw"
 source ~/.enhancd/init.sh
 
 # PATH
-export PATH="~/.dotfiles/bin:$PATH"
+export PATH="$HOME/.dotfiles/bin:$PATH"
 
 
 # >>> conda init >>>
@@ -130,3 +130,5 @@ unset __conda_setup
 # AMRVAC init
 export AMRVAC_DIR=$HOME/workplace/Fortranworkplace/amrvac
 PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

@@ -11,11 +11,11 @@
     ~/.jupyter: jupyter
     ~/.condarc: condarc
     ~/.spacemacs.d: spacemacs.d
-    ~/.tmux.conf : tmux.conf
+    ~/.tmux.conf.local : tmux.conf
 
 
 - shell:
     - git submodule update --remote
-    - sh ~/.dotfiles/bin/update-other
+    - sh $HOME/.dotfiles/bin/update-other
     
 

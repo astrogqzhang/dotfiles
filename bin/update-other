@@ -71,6 +71,7 @@ else
     cd ~/.tmux/ && git pull origin master
     success 'oh-my-tmux updated'
 fi
+ln -s -f ~/.tmux/.tmux.conf ~/
 
 
 # TODO add SpaceVim
