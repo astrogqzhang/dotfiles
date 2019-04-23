@@ -100,9 +100,9 @@ source $ZSH/oh-my-zsh.sh
 alias vim="nvim"
 
 # emacs alias
-alias es="TERM=xterm-24bit emacs -daemon"
+alias es="TERM=xterm-24bits emacs -daemon"
 alias eg="emacsclient -c"
-alias e="TERM=xterm-24bit emacsclient -c -nw"
+alias e="TERM=xterm-24bits emacsclient -c -nw"
 
 # enhancd init
 source ~/.enhancd/init.sh
