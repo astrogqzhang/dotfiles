@@ -10,7 +10,7 @@
     ~/.gitconfig: gitconfig
     ~/.zshrc: zshrc
     ~/.jupyter: jupyter
-    ~/.condarc: condarc
+    # ~/.condarc: condarc
     ~/.spacemacs.d: spacemacs.d
     ~/.tmux.conf.local : tmux.conf
 
