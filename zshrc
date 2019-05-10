@@ -111,22 +111,6 @@ source ~/.enhancd/init.sh
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gqzhang/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/home/gqzhang/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gqzhang/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/home/gqzhang/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
-
 # AMRVAC init
 export AMRVAC_DIR=$HOME/workplace/Fortranworkplace/amrvac
 PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
