@@ -115,4 +115,8 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 export AMRVAC_DIR=$HOME/workplace/Fortranworkplace/amrvac
 PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
 
+# fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# pipenv auto complete
+eval "$(pipenv --completion)"
