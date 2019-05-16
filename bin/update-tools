@@ -79,7 +79,14 @@ ln -s -f ~/.tmux/.tmux.conf ~/
 
 
 # pyenv
-
-
+if [ ! -d ~/.pyenv ]; then
+    info 'installing pyenv'
+    curl https://pyenv.run | bash
+    success 'pyenv installed'
+else
+    info 'updating pyenv'
+    pyenv update
+    success 'pyenv updated'
+fi
 
 # TODO add SpaceVim
