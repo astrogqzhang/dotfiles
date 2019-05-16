@@ -120,3 +120,9 @@ PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
 
 # pipenv auto complete
 eval "$(pipenv --completion)"
+
+# pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+

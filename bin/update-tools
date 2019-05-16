@@ -27,16 +27,18 @@ else
     success 'oh-my-zsh updated'
 fi
 
+
 # Spacemacs
 if [ ! -d ~/.emacs.d ]; then
     info 'installing spacemacs'
     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
     success 'spacemacs installed'
 else
-    info 'update spacemacs'
+    info 'updating spacemacs'
     cd ~/.emacs.d && git pull
     success 'spacemacs updated'
 fi
+
 
 # Enhancd
 if [ ! -d ~/.enhancd/ ]; then
@@ -44,10 +46,11 @@ if [ ! -d ~/.enhancd/ ]; then
     git clone https://github.com/b4b4r07/enhancd ~/.enhancd
     success 'enhancd installed'
 else
-    info 'update enhancd'
+    info 'updating enhancd'
     cd ~/.enhancd/ && git pull origin master
     success 'enhancd updated'
 fi
+
 
 # fzf
 if [ ! -d ~/.fzf/ ]; then
@@ -55,11 +58,12 @@ if [ ! -d ~/.fzf/ ]; then
     git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
     success 'fzf installed'
 else
-    info 'update fzf'
+    info 'updating fzf'
     cd ~/.fzf/ && git pull origin master
     success 'fzf updated'
 fi
 ~/.fzf/install --all
+
 
 # tmux
 if [ ! -d ~/.tmux ]; then
@@ -67,11 +71,15 @@ if [ ! -d ~/.tmux ]; then
     git clone https://github.com/gpakosz/.tmux.git ~/.tmux
     success 'oh-my-tmux installed'
 else
-    info 'update oh-my-tmux'
+    info 'updating oh-my-tmux'
     cd ~/.tmux/ && git pull origin master
     success 'oh-my-tmux updated'
 fi
 ln -s -f ~/.tmux/.tmux.conf ~/
+
+
+# pyenv
+
 
 
 # TODO add SpaceVim
