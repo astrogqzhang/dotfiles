@@ -118,9 +118,6 @@ PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# pipenv auto complete
-eval "$(pipenv --completion)"
-
 # pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
