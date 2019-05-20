@@ -11,7 +11,8 @@
     ~/.zshrc: zshrc
     ~/.jupyter: jupyter
     # ~/.condarc: condarc
-    ~/.spacemacs.d: spacemacs.d
+    # ~/.spacemacs.d: spacemacs.d
+    ~/.config/doom: doom
     ~/.tmux.conf.local : tmux.conf
 
 

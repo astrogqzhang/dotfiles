@@ -29,16 +29,23 @@ fi
 
 
 # Spacemacs
-if [ ! -d ~/.emacs.d ]; then
-    info 'installing spacemacs'
-    git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
-    success 'spacemacs installed'
-else
-    info 'updating spacemacs'
-    cd ~/.emacs.d && git pull
-    success 'spacemacs updated'
-fi
+# if [ ! -d ~/.emacs.d ]; then
+#     info 'installing spacemacs'
+#     git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+#     success 'spacemacs installed'
+# else
+#     info 'updating spacemacs'
+#     cd ~/.emacs.d && git pull
+#     success 'spacemacs updated'
+# fi
 
+if [ ! -d ~/.config/doom ]; then
+    info 'installing doom'
+    git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
+    success 'doom installed'
+else
+    doom upgrade
+fi
 
 # Enhancd
 if [ ! -d ~/.enhancd/ ]; then

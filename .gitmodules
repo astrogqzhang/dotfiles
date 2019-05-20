@@ -4,3 +4,6 @@
 [submodule "spacemacs.d"]
 	path = spacemacs.d
 	url = git@github.com:astrogqzhang/Spacemacs-private.git
+[submodule "doom"]
+	path = doom
+	url = git@github.com:astrogqzhang/doom-emacs-private.git
