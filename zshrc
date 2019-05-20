@@ -112,7 +112,7 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 
 
 # AMRVAC init
-export AMRVAC_DIR=$HOME/workplace/Fortranworkplace/amrvac
+export AMRVAC_DIR=$HOME/software/amrvac
 PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
 
 # fzf
@@ -123,3 +123,5 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# pyenv-virtualenv
+eval "$(pyenv virtualenv-init -)"
