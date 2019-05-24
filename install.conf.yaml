@@ -12,7 +12,7 @@
     ~/.jupyter: jupyter
     # ~/.condarc: condarc
     # ~/.spacemacs.d: spacemacs.d
-    ~/.config/doom: doom
+    ~/.doom.d: doom
     ~/.tmux.conf.local : tmux.conf
 
 
