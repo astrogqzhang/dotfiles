@@ -39,7 +39,7 @@ fi
 #     success 'spacemacs updated'
 # fi
 
-if [ ! -d ~/.config/doom ]; then
+if [ ! -d ~/.emacs.d ]; then
     info 'installing doom'
     git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
     success 'doom installed'
