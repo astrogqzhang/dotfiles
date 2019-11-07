@@ -101,9 +101,10 @@ alias vim="nvim"
 
 # emacs alias
 export PATH="$HOME/.emacs.d/bin:$PATH"
-alias es="TERM=xterm-24bits emacs -daemon"
-alias eg="emacsclient -c"
-alias e="TERM=xterm-24bits emacsclient -c -nw"
+alias e="emacs -nw"
+# alias es="TERM=xterm-24bits emacs -daemon"
+# alias eg="emacsclient -c"
+# alias e="TERM=xterm-24bits emacsclient -c -nw"
 
 # enhancd init
 source ~/.enhancd/init.sh

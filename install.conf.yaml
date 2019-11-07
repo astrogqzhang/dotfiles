@@ -18,6 +18,6 @@
 
 - shell:
     - git submodule update --remote
-    - sh $HOME/.dotfiles/bin/update-other
+    - sh $HOME/.dotfiles/bin/update-tools
     
 
