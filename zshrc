@@ -117,13 +117,6 @@ export PATH="$HOME/.dotfiles/bin:$PATH"
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# pyenv
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-# pyenv-virtualenv
-eval "$(pyenv virtualenv-init -)"
 
 # added by Anaconda3 5.3.1 installer
 # >>> conda init >>>
