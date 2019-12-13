@@ -113,9 +113,6 @@ source ~/.enhancd/init.sh
 export PATH="$HOME/.dotfiles/bin:$PATH"
 
 
-# AMRVAC init
-export AMRVAC_DIR=$HOME/software/amrvac
-PATH="$PATH:$AMRVAC_DIR:$AMRVAC_DIR/tools"
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -134,7 +131,4 @@ else
         \export PATH="/home/gqzhang/anaconda3/bin:$PATH"
     fi
 fi
-
-# unset __conda_setup
-export GOPATH=${HOME}/go
-export PATH=/usr/local/go/bin:${PATH}:${GOPATH}/bin
+unset __conda_setup
