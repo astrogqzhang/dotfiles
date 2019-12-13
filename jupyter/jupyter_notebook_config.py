@@ -37,7 +37,7 @@
 # NotebookApp(JupyterApp) configuration
 #------------------------------------------------------------------------------
 
-## Set the Access-Control-Allow-Credentials: true header
+## 设置Access-Control-Allow-Credentials:true报头
 #c.NotebookApp.allow_credentials = False
 
 ## Set the Access-Control-Allow-Origin header
@@ -67,7 +67,21 @@
 #  This can be set to false to prevent changing password from the UI/API.
 #c.NotebookApp.allow_password_change = True
 
-## Whether to allow the user to run the notebook as root.
+## Allow requests where the Host header doesn't point to a local server
+#  
+#  By default, requests get a 403 forbidden response if the 'Host' header shows
+#  that the browser thinks it's on a non-local domain. Setting this option to
+#  True disables this check.
+#  
+#  This protects against 'DNS rebinding' attacks, where a remote web server
+#  serves you a page and then changes its DNS to send later requests to a local
+#  IP, bypassing same-origin checks.
+#  
+#  Local IP addresses (such as 127.0.0.1 and ::1) are allowed as local, along
+#  with hostnames configured in local_hostnames.
+c.NotebookApp.allow_remote_access = True 
+
+## 是否允许notebook在root用户下运行.
 #c.NotebookApp.allow_root = False
 
 ## DEPRECATED use base_url
@@ -84,11 +98,10 @@
 #  variable to override it.
 #c.NotebookApp.browser = ''
 
-## The full path to an SSL/TLS certificate file.
+## SSL/TLS 认证文件所在全路径.
 #c.NotebookApp.certfile = ''
 
-## The full path to a certificate authority certificate for SSL/TLS client
-#  authentication.
+## 用于ssl/tls客户端身份验证的证书颁发证书的完整路径.
 #c.NotebookApp.client_ca = ''
 
 ## The config manager class to use
@@ -109,10 +122,22 @@
 #  cookie_secret stored in plaintext (you can read the value from a file).
 #c.NotebookApp.cookie_secret = b''
 
-## The file where the cookie secret is stored.
+## 存放cookie密钥的文件被保存了.
 #c.NotebookApp.cookie_secret_file = ''
 
-## The default URL to redirect to from `/`
+## Override URL shown to users.
+#  
+#  Replace actual URL, including protocol, address, port and base URL, with the
+#  given value when displaying URL to the users. Do not change the actual
+#  connection URL. If authentication token is enabled, the token is added to the
+#  custom URL automatically.
+#  
+#  This option is intended to be used when the URL to display to the user cannot
+#  be determined reliably by the Jupyter notebook server (proxified or
+#  containerized setups for example).
+#c.NotebookApp.custom_display_url = ''
+
+## 从 `/` 重定向到的默认URL
 #c.NotebookApp.default_url = '/tree'
 
 ## Disable cross-site-request-forgery protection
@@ -158,6 +183,10 @@
 ## 
 #c.NotebookApp.file_to_run = ''
 
+## Extra keyword arguments to pass to `get_secure_cookie`. See tornado's
+#  get_secure_cookie docs for details.
+#c.NotebookApp.get_secure_cookie_kwargs = {}
+
 ## Deprecated: Use minified JS file or not, mainly use during dev to avoid JS
 #  recompilation
 #c.NotebookApp.ignore_minified_js = False
@@ -170,8 +199,8 @@
 #  limited.
 #c.NotebookApp.iopub_msg_rate_limit = 1000
 
-## The IP address the notebook server will listen on.
-c.NotebookApp.ip = '0.0.0.0'
+## notebook服务会监听的IP地址.
+c.NotebookApp.ip = '*'
 
 ## Supply extra arguments that will be passed to Jinja environment.
 #c.NotebookApp.jinja_environment_options = {}
@@ -189,8 +218,14 @@ c.NotebookApp.ip = '0.0.0.0'
 #  between this version of Jupyter and the next stable one.
 #c.NotebookApp.kernel_spec_manager_class = 'jupyter_client.kernelspec.KernelSpecManager'
 
-## The full path to a private key file for usage with SSL/TLS.
+## SSL/TLS 私钥文件所在全路径.
 #c.NotebookApp.keyfile = ''
+
+## Hostnames to allow as local when allow_remote_access is False.
+#  
+#  Local IP addresses (such as 127.0.0.1 and ::1) are automatically accepted as
+#  local as well.
+#c.NotebookApp.local_hostnames = ['localhost']
 
 ## The login handler class to use.
 #c.NotebookApp.login_handler_class = 'notebook.auth.login.LoginHandler'
@@ -205,12 +240,21 @@ c.NotebookApp.ip = '0.0.0.0'
 #  MathJax, for example:  /static/components/MathJax/MathJax.js
 #c.NotebookApp.mathjax_url = ''
 
-## Dict of Python modules to load as notebook server extensions.Entry values can
-#  be used to enable and disable the loading ofthe extensions. The extensions
-#  will be loaded in alphabetical order.
+## Sets the maximum allowed size of the client request body, specified in  the
+#  Content-Length request header field. If the size in a request  exceeds the
+#  configured value, a malformed HTTP message is returned to the client.
+#  
+#  Note: max_body_size is applied even in streaming mode.
+#c.NotebookApp.max_body_size = 536870912
+
+## Gets or sets the maximum amount of memory, in bytes, that is allocated  for
+#  use by the buffer manager.
+#c.NotebookApp.max_buffer_size = 536870912
+
+## 将Python模块作为笔记本服务器扩展加载。可以使用条目值来启用和禁用扩展的加载。这些扩展将以字母顺序加载。
 #c.NotebookApp.nbserver_extensions = {}
 
-## The directory to use for notebooks and kernels.
+## 用于笔记本和内核的目录。
 #c.NotebookApp.notebook_dir = ''
 
 ## Whether to open in a browser after starting. The specific browser used is
@@ -221,12 +265,12 @@ c.NotebookApp.open_browser = False
 
 ## Hashed password to use for web authentication.
 #  
-#  To generate, type in a python/#Python shell:
+#  To generate, type in a python/IPython shell:
 #  
 #    from notebook.auth import passwd; passwd()
 #  
 #  The string should be of the form type:salt:hashed-password.
-#c.NotebookApp.password = 'aptx4869'
+#c.NotebookApp.password = ''
 
 ## Forces users to use a password for the Notebook server. This is useful in a
 #  multi user environment, for instance when everybody in the LAN can access each
@@ -236,10 +280,10 @@ c.NotebookApp.open_browser = False
 #  any user can connect to the notebook server via ssh.
 #c.NotebookApp.password_required = False
 
-## The port the notebook server will listen on.
-#c.NotebookApp.port = 8888
+## notebook服务会监听的IP端口.
+c.NotebookApp.port = 8009
 
-## The number of additional ports to try if the specified port is not available.
+## 如果指定的端口不可用，则要尝试其他端口的数量.
 #c.NotebookApp.port_retries = 50
 
 ## DISABLED: use %pylab or %matplotlib in the notebook to enable matplotlib.
@@ -249,13 +293,13 @@ c.NotebookApp.open_browser = False
 #  server).
 #c.NotebookApp.quit_button = True
 
-## (sec) Time window used to  check the message and data rate limits.
+## (sec)时间窗口被用来  检查消息和数据速率限制.
 #c.NotebookApp.rate_limit_window = 3
 
-## Reraise exceptions encountered loading server extensions?
+## 重新运行的异常会遇到加载服务器扩展吗?
 #c.NotebookApp.reraise_server_extension_failures = False
 
-## DEPRECATED use the nbserver_extensions dict instead
+## 不赞成使用nbserverextensions
 #c.NotebookApp.server_extensions = []
 
 ## The session manager class to use.
@@ -529,6 +573,15 @@ c.NotebookApp.open_browser = False
 #  cull timeout value.
 #c.MappingKernelManager.cull_interval = 300
 
+## Timeout for giving up on a kernel (in seconds).
+#  
+#  On starting and restarting kernels, we check whether the kernel is running and
+#  responsive by sending kernel_info_requests. This sets the timeout in seconds
+#  for how long the kernel can take before being presumed dead.  This affects the
+#  MappingKernelManager (which handles kernel restarts)  and the
+#  ZMQChannelsHandler (which handles the startup).
+#c.MappingKernelManager.kernel_info_timeout = 60
+
 ## 
 #c.MappingKernelManager.root_dir = ''
 
@@ -609,7 +662,7 @@ c.NotebookApp.open_browser = False
 #c.ContentsManager.untitled_file = 'untitled'
 
 ## The base name used when creating untitled notebooks.
-#c.ContentsManager.untitled_notebook = 'Untitled'
+#c.ContentsManager.untitled_notebook = '未命名'
 
 #------------------------------------------------------------------------------
 # FileManagerMixin(Configurable) configuration
