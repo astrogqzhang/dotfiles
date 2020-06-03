@@ -39,14 +39,14 @@ fi
 #     success 'spacemacs updated'
 # fi
 
-if [ ! -d ~/.emacs.d ]; then
-    info 'installing doom'
-    git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
-    success 'doom installed'
-else
-    doom upgrade
-fi
-
+# if [ ! -d ~/.emacs.d ]; then
+#     info 'installing doom'
+#     git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
+#     success 'doom installed'
+# else
+#     doom upgrade
+# fi
+# 
 # Enhancd
 if [ ! -d ~/.enhancd/ ]; then
     info 'installing enhancd'
@@ -85,16 +85,16 @@ fi
 ln -s -f ~/.tmux/.tmux.conf ~/
 
 
-# pyenv
-if [ ! -d ~/.pyenv ]; then
-    info 'installing pyenv'
-    curl https://pyenv.run | bash
-    success 'pyenv installed'
-else
-    info 'updating pyenv'
-    pyenv update
-    success 'pyenv updated'
-fi
+# # pyenv
+# if [ ! -d ~/.pyenv ]; then
+#     info 'installing pyenv'
+#     curl https://pyenv.run | bash
+#     success 'pyenv installed'
+# else
+#     info 'updating pyenv'
+#     pyenv update
+#     success 'pyenv updated'
+# fi
 
 
 # TODO add SpaceVim
