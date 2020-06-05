@@ -132,3 +132,7 @@ else
     fi
 fi
 unset __conda_setup
+
+
+# git fuzzy
+export PATH="/home/gqzhang/.git-fuzzy/bin:$PATH"

@@ -39,6 +39,7 @@ fi
 #     success 'spacemacs updated'
 # fi
 
+# doom
 # if [ ! -d ~/.emacs.d ]; then
 #     info 'installing doom'
 #     git clone -b develop https://github.com/hlissner/doom-emacs ~/.emacs.d
@@ -47,6 +48,7 @@ fi
 #     doom upgrade
 # fi
 # 
+
 # Enhancd
 if [ ! -d ~/.enhancd/ ]; then
     info 'installing enhancd'
@@ -95,6 +97,15 @@ ln -s -f ~/.tmux/.tmux.conf ~/
 #     pyenv update
 #     success 'pyenv updated'
 # fi
+if [ ! -d ~/.git-fuzzy/ ]; then
+    info "installing git-fuzzy"
+    git clone https://github.com/bigH/git-fuzzy.git ~/.git-fuzzy
+    seccess 'git-fuzzy installed'
+else
+    info 'updating git-fuzzy'
+    cd ~/.git-fuzzy/ && git pull origin master
+    success 'git-fuzzy updated'
+fi
 
 
 # TODO add SpaceVim
